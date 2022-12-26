@@ -1,43 +1,39 @@
-# SPICED Week08: Predicting the amount of customers and their movement within a supermarket using a 'Monte-Carlo-Markov-Chain' and 'Object Orientated Programming'
+# SPICED Week04: Scrape lyrics of two artists from www.lyrics.com and train a model to distinguish between them using the 'Bag of Words' method
 
 ## Project Summary
 
-In this project I predicted the number of customers and their movement within the DOODL Supermarket. The supermarket has four aisles (fruit, spices, dairy, drinks) and one checkout. To do the prediction, I calculated a 'Transition Probability Matrix' based on historical data of customer movements within the supermarket using a 'Monte Carlo Markov Chain'.
+In this project, I build a text classification model on song lyrics of two different artists. At the end, the task is to determine which of the two artists has written a particular song. To train such a model, the script will scrape the lyrics from the web. The following steps are necessary to achive the project goal:
 
-The customer movements are calculated every minute, graphically animated and stored in the file ./data/customer.csv.
+- Download a HTML page with links to songs
+- Extract hyperlinks of song pages
+- Download and extract the song lyrics
+- Vectorize the text using the Bag Of Words method
+- train a classification model that predicts the artist from a piece of text
+- refactor the code into functions
 
-## Demonstration Video
+## Documentation
 
-https://user-images.githubusercontent.com/61935581/209478840-efb8b7ef-0592-4395-ac88-26dc0c6492e8.mp4
+Frontend visualization of the script 'lyrics_exe.command' for the artists 'Frightened Rabbit' and 'Gaslight Anthem':
 
-Graphic representation of the supermarket
+![Bildschirmfoto 2022-12-26 um 16 15 32](https://user-images.githubusercontent.com/61935581/209565168-60548b75-13f4-4d16-a233-45f292db681f.png)
 
-![Bildschirmfoto 2022-12-25 um 19 53 35](https://user-images.githubusercontent.com/61935581/209479227-0de17873-4045-46b7-beec-4cd39be95cb7.png)
-
-## Installation
-
-Clone the repository and create a new virtual environment
-
-```bash
-python3 -m venv envname # to create the virtual env
-source envname/bin/activate # activate it
-```
-
-Afterwards install the libraries specified in requirements.txt
-
-```bash
-pip install -r requirements.txt
-```
+The results with the test data were not satisfactory, which could be due to the fact that both bands use a similar language and the corpus of song lyrics studied was comparatively small with 20 songs each.
 
 ## Usage
 
-The project has several components:
+Clone the repository and double click on 'lyrics_exe.command'. The script will then prompt you for the page of artist 1 and 2 on lyrics.com.
+In the example shown above, these were the following pages:
 
-- The jupyter notebook '1_EDA.ipynb' merges the historical data and applies extensive 'data preprocessing'.
-- '2_Graphics.ipynb' includes a few graphical analyses of the merged and preprocessed data set.
-- '3_probability_matrix.ipynb' contains the central 'transition probability matrix' on the basis of which the movement of customers is estimated.
-- 'supermarket_class.py' and 'customer_class.py' contains the classes for the supermarket and the customers according to OOP.
-- The simulation can be started via 'main.py'. The graphical representation starts automatically. In addition, the customers and their movements are stored in the file './data/customers.csv'.
+- 'Frightened-Rabbit/807408'
+- 'The-Gaslight-Anthem/909493'
+
+Afterwards, the script will download the lyrics and ask the user for the size of the corpus. Be aware that the corpus can not be bigger than the amount of downloaded lyrics.
+
+Finally, for models will be trained using the 'Bag of Words' method and their results displayed in the terminal.
+
+## Additional Material
+
+In the Jupiter notebooks, the step-by-step development of the Python script can be retraced. In addition, they contain a few more features such as the creation of a wordcloud (see 'WP4_Pipeline.ipynb').
 
 ## Contributing
 
