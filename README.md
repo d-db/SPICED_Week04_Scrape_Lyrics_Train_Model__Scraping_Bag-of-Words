@@ -15,9 +15,7 @@ In this project, I build a text classification model on song lyrics of two diffe
 
 Frontend visualization of the script 'lyrics_exe.command' for the artists 'Frightened Rabbit' and 'Gaslight Anthem':
 
-![Bildschirmfoto 2022-12-26 um 16 15 32](https://user-images.githubusercontent.com/61935581/209565168-60548b75-13f4-4d16-a233-45f292db681f.png)
-
-The results with the test data were not satisfactory, which could be due to the fact that both bands use a similar language and the corpus of song lyrics studied was comparatively small with 20 songs each.
+![Bildschirmfoto 2022-12-26 um 17 04 03](https://user-images.githubusercontent.com/61935581/209566110-463c7bb6-e3ec-4947-87b2-7a42669ec49a.png)
 
 ## Usage
 
